@@ -12,13 +12,15 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  // Update document title
+  // Update document title and set dark theme
   useEffect(() => {
     document.title = "Karim Elsayed | Flutter Developer";
+    // Ensure dark mode is applied
+    document.documentElement.classList.add('dark');
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col dark:bg-navy dark:text-slate-light">
       <Navbar />
       
       <main className="flex-1">

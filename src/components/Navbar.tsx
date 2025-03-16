@@ -17,7 +17,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const isMobile = useIsMobile();
 
   const toggleTheme = () => {
@@ -27,12 +27,15 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    // Set dark theme by default
+    document.documentElement.classList.add('dark');
+    
     const handleScroll = () => {
       const sections = document.querySelectorAll('section[id]');
       
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY - 100;
+        const sectionHeight = section.clientHeight;
         const sectionId = section.getAttribute('id');
         
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
