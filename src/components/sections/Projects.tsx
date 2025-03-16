@@ -51,12 +51,16 @@ export default function Projects() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col h-full">
-              <div className="h-48 bg-muted flex items-center justify-center">
+            <Card 
+              key={index} 
+              className="overflow-hidden flex flex-col h-full card-hover animate-on-scroll fade-in-up"
+              style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+            >
+              <div className="h-48 bg-muted flex items-center justify-center overflow-hidden group">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               
@@ -68,14 +72,20 @@ export default function Projects() {
               <CardContent className="flex-1">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.map((tech, i) => (
-                    <Badge key={i} variant="secondary">{tech}</Badge>
+                    <Badge 
+                      key={i} 
+                      variant="secondary"
+                      className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
+                    >
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
               
               <CardFooter className="flex flex-wrap gap-2">
                 {project.playStoreLink && (
-                  <Button asChild variant="outline" size="sm">
+                  <Button asChild variant="outline" size="sm" className="btn-animated">
                     <a href={project.playStoreLink} target="_blank" rel="noopener noreferrer">
                       <Smartphone className="mr-1.5 h-3.5 w-3.5" />
                       Play Store
@@ -84,7 +94,7 @@ export default function Projects() {
                 )}
                 
                 {project.appStoreLink && (
-                  <Button asChild variant="outline" size="sm">
+                  <Button asChild variant="outline" size="sm" className="btn-animated">
                     <a href={project.appStoreLink} target="_blank" rel="noopener noreferrer">
                       <Smartphone className="mr-1.5 h-3.5 w-3.5" />
                       App Store
@@ -93,7 +103,7 @@ export default function Projects() {
                 )}
                 
                 {project.githubLink && (
-                  <Button asChild variant="outline" size="sm">
+                  <Button asChild variant="outline" size="sm" className="btn-animated">
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-1.5 h-3.5 w-3.5" />
                       Code

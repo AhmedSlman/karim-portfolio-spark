@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16">
+    <section id="home" className="min-h-screen flex items-center pt-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="order-2 md:order-1 max-w-3xl">
@@ -25,27 +25,30 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="btn-animated group">
                 <a href="/resume.pdf" download>
-                  <Download className="mr-2 h-4 w-4" />
+                  <Download className="mr-2 h-4 w-4 group-hover:animate-bounce-subtle" />
                   Download CV
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="btn-animated group">
                 <a href="#contact">
-                  <Mail className="mr-2 h-4 w-4" />
+                  <Mail className="mr-2 h-4 w-4 group-hover:animate-bounce-subtle" />
                   Contact Me
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
           </div>
           
           <div className="order-1 md:order-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <Avatar className="h-64 w-64 border-4 border-accent shadow-xl">
-              <AvatarImage src="/profile-picture.png" alt="Karim Elsayed" />
-              <AvatarFallback className="text-4xl bg-secondary">KE</AvatarFallback>
-            </Avatar>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-accent/20 animate-pulse-soft blur-xl"></div>
+              <Avatar className="h-64 w-64 border-4 border-accent shadow-xl animate-float">
+                <AvatarImage src="/profile-picture.png" alt="Karim Elsayed" />
+                <AvatarFallback className="text-4xl bg-secondary">KE</AvatarFallback>
+              </Avatar>
+            </div>
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ import Certifications from "@/components/sections/Certifications";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
+import useAnimateOnScroll from "@/hooks/useAnimateOnScroll";
 
 const Index = () => {
   // Update document title and set dark theme
@@ -18,6 +19,9 @@ const Index = () => {
     // Ensure dark mode is applied
     document.documentElement.classList.add('dark');
   }, []);
+
+  // Initialize scroll animations
+  useAnimateOnScroll();
 
   return (
     <div className="min-h-screen flex flex-col dark:bg-navy dark:text-slate-light">

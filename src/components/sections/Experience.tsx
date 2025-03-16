@@ -10,7 +10,7 @@ export default function Experience() {
         <h2 className="section-heading">Experience</h2>
         
         <div className="space-y-8">
-          <Card>
+          <Card className="animate-on-scroll fade-in-left card-hover">
             <CardHeader>
               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                 <div>
@@ -31,27 +31,27 @@ export default function Experience() {
             </CardHeader>
             <CardContent>
               <ul className="space-y-4 list-disc pl-5">
-                <li>
+                <li className="transition-all duration-300 hover:translate-x-1">
                   <strong>Gomltak:</strong> Developed an e-commerce app selling products at wholesale prices, integrating payment and delivery solutions.
                 </li>
-                <li>
+                <li className="transition-all duration-300 hover:translate-x-1">
                   <strong>HR Insight:</strong> Improved UI and added features for an employee attendance tracking app.
                 </li>
-                <li>
+                <li className="transition-all duration-300 hover:translate-x-1">
                   <strong>Charlotte Sweets:</strong> Created an administrative system for order management, with separate apps for managers and delivery personnel.
                 </li>
               </ul>
               <div className="flex flex-wrap gap-2 mt-4">
-                <Badge variant="secondary">Flutter</Badge>
-                <Badge variant="secondary">Dart</Badge>
-                <Badge variant="secondary">BLoC</Badge>
-                <Badge variant="secondary">API Integration</Badge>
-                <Badge variant="secondary">Firebase</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Flutter</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Dart</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">BLoC</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">API Integration</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Firebase</Badge>
               </div>
             </CardContent>
           </Card>
           
-          <Card>
+          <Card className="animate-on-scroll fade-in-right card-hover" style={{ animationDelay: '0.2s' }}>
             <CardHeader>
               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                 <div>
@@ -72,19 +72,19 @@ export default function Experience() {
             </CardHeader>
             <CardContent>
               <ul className="space-y-4 list-disc pl-5">
-                <li>
+                <li className="transition-all duration-300 hover:translate-x-1">
                   <strong>Accountrix:</strong> A platform connecting companies with accountants, featuring real-time chat, job postings, and secure payments.
                 </li>
-                <li>
+                <li className="transition-all duration-300 hover:translate-x-1">
                   <strong>PickChance:</strong> A B2B multi-vendor marketplace helping SMEs trade raw materials and production waste efficiently.
                 </li>
               </ul>
               <div className="flex flex-wrap gap-2 mt-4">
-                <Badge variant="secondary">Flutter</Badge>
-                <Badge variant="secondary">Dart</Badge>
-                <Badge variant="secondary">Provider</Badge>
-                <Badge variant="secondary">Firebase</Badge>
-                <Badge variant="secondary">Real-time Chat</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Flutter</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Dart</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Provider</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Firebase</Badge>
+                <Badge variant="secondary" className="transition-all duration-300 hover:bg-accent hover:text-accent-foreground">Real-time Chat</Badge>
               </div>
             </CardContent>
           </Card>

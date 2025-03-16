@@ -8,10 +8,10 @@ export default function Education() {
       <div className="container mx-auto px-4">
         <h2 className="section-heading">Education</h2>
         
-        <Card>
+        <Card className="animate-on-scroll scale-up card-hover">
           <CardContent className="pt-6">
             <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 flex-shrink-0">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 flex-shrink-0 animate-pulse-soft">
                 <GraduationCap className="h-8 w-8 text-primary" />
               </div>
               

@@ -32,10 +32,14 @@ export default function Certifications() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
-            <Card key={index} className="flex flex-col h-full">
+            <Card 
+              key={index} 
+              className="flex flex-col h-full card-hover animate-on-scroll fade-in-up"
+              style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+            >
               <CardContent className="pt-6 flex-1">
                 <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 flex-shrink-0 animate-pulse-soft">
                     <Award className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -47,10 +51,10 @@ export default function Certifications() {
               </CardContent>
               
               <CardFooter>
-                <Button asChild variant="ghost" size="sm" className="w-full">
+                <Button asChild variant="ghost" size="sm" className="w-full btn-animated">
                   <a href={cert.link} target="_blank" rel="noopener noreferrer">
                     <span>View Certificate</span>
-                    <ExternalLink className="ml-2 h-4 w-4" />
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
               </CardFooter>

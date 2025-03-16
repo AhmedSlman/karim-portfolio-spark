@@ -110,7 +110,7 @@
 
 @layer components {
   .section-heading {
-    @apply flex items-center text-2xl font-semibold mb-8 text-foreground;
+    @apply flex items-center text-2xl font-semibold mb-8 text-foreground after:animate-pulse-soft;
   }
   
   .section-heading::after {
@@ -136,6 +136,42 @@
   
   .timeline-item::before {
     content: '';
-    @apply absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent;
+    @apply absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent animate-pulse-soft;
+  }
+
+  .animate-on-scroll {
+    @apply opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .animate-on-scroll.fade-in-up {
+    @apply translate-y-8;
+  }
+
+  .animate-on-scroll.fade-in-left {
+    @apply -translate-x-8;
+  }
+
+  .animate-on-scroll.fade-in-right {
+    @apply translate-x-8;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0 translate-x-0;
+  }
+
+  .btn-animated {
+    @apply relative overflow-hidden transition-all duration-300 ease-in-out;
+  }
+
+  .btn-animated::before {
+    @apply content-[''] absolute w-full h-full bg-accent/20 top-0 left-0 scale-x-0 origin-right transition-transform duration-300;
+  }
+
+  .btn-animated:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-card/80;
   }
 }
